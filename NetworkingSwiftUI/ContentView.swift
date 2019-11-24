@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject private var postListVM = PostListViewModel()
+    
     var body: some View {
-        Text("Hello, World!")
+        
+        List(self.postListVM.post, id: \.id) { post in
+            VStack(alignment: .leading) {
+                Text(post.title.rendered)
+                    .font(.title)
+                Text(post.content.rendered)
+            }
+            
+        }
     }
 }
 

@@ -27,6 +27,10 @@ class Webservice {
             
             let post = try? JSONDecoder().decode([Post].self, from: data)
             
+            // Added this and somehow it started working?
+            print(post![0].title.rendered)
+            print(post![0].content.rendered)
+            
             DispatchQueue.main.async {
                 completion(post)
             }

@@ -17,7 +17,6 @@ class PostListViewModel: ObservableObject {
             if let post = post {
                 self.post = post.map(PostViewModel.init)
             }
-            
         }
     }
 
@@ -34,11 +33,11 @@ class PostListViewModel: ObservableObject {
         }
         
         var title: WordpressText {
-            return self.post.title.rendered
+            return self.post.title
         }
         
         var content: WordpressProtectedText {
-            return self.post.content.rendered
+            return self.post.content
         }
     }
 }
